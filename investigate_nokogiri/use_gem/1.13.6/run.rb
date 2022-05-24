@@ -7,6 +7,7 @@ gemfile(true) do # holiday_jp should be up-to-date
 end
 
 require 'nokogiri'
+puts `uname -a`
 puts Nokogiri::VERSION
 
 html = <<~EOS

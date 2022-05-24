@@ -11,9 +11,11 @@ RUN apt update \
   && rm -rf \
     /var/lib/apt/lists/*_*
 
-RUN git clone https://github.com/sparklemotion/nokogiri.git \
-    cd nokogiri \
-    bundle install \
-    bundle exec rake compile \
-    git reset --hard HEAD \
-    bundle exec ruby ./test.rb
+WORKDIR /investigate_nokogiri
+#RUN git clone https://github.com/sparklemotion/nokogiri.git \
+#    && cd nokogiri \
+#    && bundle config build.nokogiri --use-system-libraries \
+#    && bundle install \
+#    && bundle exec rake compile \
+#    && git reset --hard HEAD \
+#    && bundle exec ruby ./test.rb
